@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+        <label for="length">Enter Length</label>
+        <input type="text" id="length" placeholder="Enter Length">
+        <label for="length">Enter Width</label>
+        <input type="text" id="width" placeholder="Enter Length">
+        <button onclick="getPerimeter()">Submit</button>
+
+    <p id="output"></p>
+</body>
+</html>
+<script>
+    let mylength = document.getElementById('length')
+    let mywidth = document.getElementById('width')
+    let myoutput = document.getElementById('output')
+
+    function getPerimeter() {
+        perimeter = Number(mylength.value) + Number(mywidth.value)
+        myoutput.innerHTML = `The perimeter of a rectangle is ${perimeter}`
+        console.log(perimeter);
+        
+    }
+
+</script>
