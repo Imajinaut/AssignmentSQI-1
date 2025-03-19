@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="myInput">
+
+    <button onclick="add(1)"> 1 </button>
+    <button onclick="add(2)"> 2 </button>
+    <button onclick="add(3)"> 3 </button>
+    <button onclick="add(4)"> 4 </button>
+    <button onclick="add(5)"> 5 </button>
+    <button onclick="add(6)"> 6 </button>
+    <button onclick="add('+')"> + </button>
+   <button onclick="answer()" > = </button>
+
+   <p id="preview"></p>
+
+
+   <input type="text" id="weight">
+   <input type="text" id="height">
+   <button onclick="calculateBMI()">Calculate My BMI</button>
+
+   <p id="myBMIstatmwent"></p>
+</body>
+
+
+
+<script>
+let myweight = document.getElementById('weight')
+let myheight = document.getElementById('height')
+let myoutput = document.getElementById('myBMIstatmwent')
+// CALCULATE BMI
+ function calculateBMI(params) {
+    let weightinput = myweight.value
+    let heightinput = myheight.value
+    if (weightinput.trim() === ''  ) {
+        alert('Please enter your weight')
+    }
+    else if(heightinput.trim()===''){
+        alert('Please enter your weight')  
+    }
+    else if (!(heightinput.trim()==='') || !(weightinput.trim()==='') ){
+        output = Number(weightinput)* Math.sqrt(Number(heightinput))
+        if (output<18.5) {
+            console.log(output);
+            
+            console.log(`You're Underweight`);
+            myoutput.innerHTML = `Your BMI is ${output}, You've Under Weight`
+            
+        }
+        else if(output>= 18.5 && output <= 24.9){
+            console.log(output);
+            console.log(`You've Normal wieght`);
+            myoutput.innerHTML = `Your BMI is ${output}, You've Normal Weight`
+        }
+        else if(output>= 25 && output <= 29.9){
+            console.log(output);
+            console.log(`You're Overwieght`);
+            myoutput.innerHTML = `Your BMI is ${output}, You're Overweight`
+        }
+        else if (output>=30){
+            console.log(output);
+            myoutput.innerHTML = `Your BMI is ${output}, You're Obese`
+        }
+        
+    }
+ } 
+
+</script>
