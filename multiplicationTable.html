@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <input type="number" id="Num1">
+    <input type="number" id="Num2">
+    <button onclick="generateTable()" >Generate A Table</button>
+    <div id="myOUTput"></div>
+</body>
+</html>
+<script>
+
+let num1= document.getElementById('Num1')
+let num2= document.getElementById('Num2')
+let myoutput = document.getElementById('myOUTput')
+
+// let num2 = prompt('Please enter a number')
+
+function generateTable() {
+
+    myoutput.innerHTML = '';
+
+    if (num1.value === '' || num2.value === '') {
+      
+        alert('Please Enter a Number less than 12');
+  
+    } else if (num1.value > 12 || num2.value > 12) {
+       
+        alert('Please Enter a Number less than 12');
+    
+    } else if (num1.value > num2.value) {
+        
+        for (let i = num2.value; i <= num1.value; i++) {
+        
+            console.log(`${i} * ${num1.value} = ${i * num1.value}`);
+          
+            myoutput.innerHTML += `${i} * ${num1.value} = ${i * num1.value}<br>`
+        
+        }}else if (num2.value > num1.value) {
+       
+            for (let i = num1.value; i <= num2.value; i++) {
+          
+            console.log(`${i} * ${num2.value} = ${i * num2.value}`);
+           
+            myoutput.innerHTML += `${i} * ${num2.value} = ${i * num2.value}<br>`
+       
+        }}else if (num2.value = num1.value) {
+            
+            for (let i = num1.value; i <= num2.value; i++) {
+            console.log(`${i} * ${num2.value} = ${i * num2.value}`);
+            
+            myoutput.innerHTML += `${i} * ${num2.value} = ${i * num2.value}<br>`
+
+        }
+    } else {
+        alert("The second number should be less than or equal to the first number.");
+    }
+}
+
+
+
+</script>
